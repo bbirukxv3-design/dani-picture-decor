@@ -158,7 +158,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden group hover:border-amber-500/40 transition duration-300 flex flex-col">
-              <div className="relative h-[300px] w-full shrink-0">
+              <div className="relative h-[850px] w-full shrink-0">
                 <Image
                   src="/dani15.jpg"
                   alt="Photo Print & Frame"
@@ -185,7 +185,7 @@ export default function HomePage() {
 
             {/* Card 2 */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden group hover:border-amber-500/40 transition duration-300 flex flex-col">
-              <div className="relative h-[300px] w-full shrink-0">
+              <div className="relative h-[850px] w-full shrink-0">
                 <Image
                   src="/dani7.jpg"
                   alt="Bernos Event Decor"
@@ -212,7 +212,7 @@ export default function HomePage() {
 
             {/* Card 3 */}
             <div className="bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden group hover:border-amber-500/40 transition duration-300 flex flex-col">
-              <div className="relative h-[300px] w-full shrink-0">
+              <div className="relative h-[850px] w-full shrink-0">
                 <Image
                   src="/dani22.jpg"
                   alt="የዳኒ ፒክቸር ስቱዲዮ አገልግሎት ምስል"
