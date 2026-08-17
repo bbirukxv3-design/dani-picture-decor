@@ -1,7 +1,7 @@
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   let response = NextResponse.next({
     request: {
       headers: request.headers,
@@ -31,19 +31,25 @@ export async function middleware(request: NextRequest) {
   )
 
   // Session ማረጋገጫ
-  const { data: { session } } = await supabase.auth.getSession()
+  const {
+    data: { session },
+  } = await supabase.auth.getSession()
 
-  // ተጠቃሚው ወደ /admin ለመግባት ሲሞክር እና ሎጊን ካላደረገ
-  if (request.nextUrl.pathname.startsWith('/admin') && request.nextUrl.pathname !== '/admin/login') {
+  // /admin ለመግባት ሲሞክር እና login ካላደረገ
+  if (
+    request.nextUrl.pathname.startsWith('/admin') &&
+    request.nextUrl.pathname !== '/admin/login'
+  ) {
     if (!session) {
-      return NextResponse.redirect(new URL('/admin/login', request.url))
+      return NextResponse.redirect(
+        new URL('/admin/login', request.url)
+      )
     }
   }
 
   return response
 }
 
-// የትኞቹ ፋይሎች እንደሚጠበቁ (Path matching)
 export const config = {
   matcher: [
     '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
