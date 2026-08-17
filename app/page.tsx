@@ -87,7 +87,7 @@ export default function HomePage() {
       {/* 2. ABOUT & BRAND INTRODUCTION */}
       <section className="py-20 px-4 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[500px] rounded-3xl overflow-hidden border border-neutral-800 group">
+          <div className="relative h-[600px] rounded-3xl overflow-hidden border border-neutral-800 group">
             <Image
              src="/dani5.jpg"
               alt="Studio Photography"
